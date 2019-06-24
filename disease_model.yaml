@@ -1,0 +1,32 @@
+plugins:
+        optional:
+                data:
+                        controller: "vivarium_public_health.dataset_manager.ArtifactManager"
+                        builder_interface: "vivarium_public_health.dataset_manager.ArtifactManagerInterface"
+
+components:
+        vivarium_public_health:
+                population:
+                        - BasePopulation()
+                        - Mortality()
+                disease.models:
+                        - SI('ischemic_heart_disease')
+                risks:
+                        - Risk("risk_factor.high_body_mass_index_in_adults")
+                        - RiskEffect("risk_factor.high_body_mass_index_in_adults", "cause.ischemic_heart_disease.incidence_rate")
+
+configuration:
+        input_data:
+                location: Kenya
+                input_draw_number: 0
+                artifact_path: /home/collijk/vivarium-demo/artifact.hdf
+        time:
+                start:
+                        year: 2010
+                end:
+                        year: 2015
+                step_size: 28 # Days
+        population:
+                age_start: 50
+                age_end: 55
+                population_size: 5_000

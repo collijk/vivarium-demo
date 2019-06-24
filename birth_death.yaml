@@ -1,0 +1,40 @@
+plugins:
+        optional:
+                data:
+                        controller: "vivarium_public_health.dataset_manager.ArtifactManager"
+                        builder_interface: "vivarium_public_health.dataset_manager.ArtifactManagerInterface"
+
+components:
+        vivarium_public_health:
+                population:
+                        - BasePopulation()
+                        - Mortality()
+                        - FertilityCrudeBirthRate()
+                metrics:
+                        - Disability()
+                        - MortalityObserver()
+
+configuration:
+        input_data:
+                location: Kenya
+                input_draw_number: 0
+                artifact_path: /home/collijk/vivarium-demo/artifact.hdf
+        time:
+                start:
+                        year: 2010
+                end:
+                        year: 2015
+                step_size: 28 # Days
+        population:
+                age_start: 0
+                age_end: 100
+                population_size: 5_000
+        metrics:
+                mortality:
+                        by_age: True
+                        by_sex: True
+                        by_year: True
+                disability:
+                        by_age: True
+                        by_sex: True
+                        by_year: True
