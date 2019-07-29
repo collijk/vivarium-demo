@@ -27,6 +27,6 @@ configuration:
                         year: 2015
                 step_size: 28 # Days
         population:
-                age_start: 50
-                age_end: 55
+                age_start: 40
+                age_end: 100
                 population_size: 5_000
