@@ -26,7 +26,7 @@ operating system at the following places:
 
 Once you have both installed, you should open up your normal shell 
 (if you're on linux or OSX) or the ``git bash`` shell if your on windows.  
-You'll then make an environment, clone this repository, then installhttps://www.youtube.com/watch?v=SAqX6NHpk1A&feature=youtu.be
+You'll then make an environment, clone this repository, then install
 all necessary requirements as follows::
 
   $> conda create --name=vivarium-demo python=3.6
